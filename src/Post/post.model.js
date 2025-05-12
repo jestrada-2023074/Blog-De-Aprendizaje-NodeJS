@@ -21,7 +21,8 @@ const postSchema = new Schema({
         },
         trim: true
     },
-    timestamp: true
+}, {
+    timestamps: true
 })
 
 export default model ('Post', postSchema)
