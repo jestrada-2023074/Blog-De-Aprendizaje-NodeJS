@@ -5,12 +5,15 @@ import morgan from 'morgan'
 import helmet from 'helmet'
 import cors from 'cors'
 import postRoutes from '../src/Post/post.routes.js'
+import commentRoutes from '../src/Comment/comment.routes.js'
+import limiter from '../middlewares/rate.limit.js'
 const configs = (app) => {
     app.use(express.json())
     app.use(express.urlencoded({extended: false}))
     app.use(cors())
     app.use(helmet())
     app.use(morgan("dev"))
+    app.use(limiter)
 }
 
 export const initServer = () => {
@@ -27,4 +30,6 @@ export const initServer = () => {
  const routes = (app) => {
     /*Se agrega Rutas de los Modelos */
     app.use('/v1/post', postRoutes)
+    app.use('/v1/comment', commentRoutes)
+    
 }  
