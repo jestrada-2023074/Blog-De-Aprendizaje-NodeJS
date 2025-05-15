@@ -17,7 +17,8 @@ const commentSchema = new Schema({
         required: [true, 'El contenido del comentario es requerido'],
         trim: true,
         maxlength: [500, 'El comentario no puede tener mas de 500 caracteres']
-    },
-    timestamp: true
+    }
+    },{
+    timestamps: true
 })
 export default model ('Comment', commentSchema)
