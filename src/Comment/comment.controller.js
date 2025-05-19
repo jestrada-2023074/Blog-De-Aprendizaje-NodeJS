@@ -20,6 +20,27 @@ export const createComment = async (req, res) => {
         })
     }
 }
+<<<<<<< Updated upstream
+=======
+export const getCommentByPostId = async (req, res) => {
+    try{
+        const { postId } = req.params;
+        const comment = await Comment.find({ postId })
+       
+        return res.send({
+            success: true,
+            message: 'comentarios encontradas',
+            data: comment
+        });
+    }catch (err) {
+        console.error('General error:', err)
+        return res.status(500).json({
+            success: false,
+            message: 'Error al todos los comentarios'
+        })
+    }
+}
+>>>>>>> Stashed changes
 
 // Get all comments
 export const getComments = async (req, res) => {
