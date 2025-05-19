@@ -21,6 +21,10 @@ const postSchema = new Schema({
         },
         trim: true
     },
+<<<<<<< Updated upstream
+=======
+  
+>>>>>>> Stashed changes
 }, {
     timestamps: true
 })
