@@ -22,17 +22,17 @@
 							"urlencoded": [
 								{
 									"key": "title",
-									"value": "",
+									"value": "[{\"key\":\"course\",\"value\":\"Taller\",\"type\":\"text\",\"uuid\":\"59b0263a-e697-48ba-b0a1-f91b0a272d8a\",\"enabled\":true}]",
 									"type": "text"
 								},
 								{
 									"key": "description",
-									"value": "",
+									"value": "Realmente vale la pena desvelarse para ganar Tecnología?",
 									"type": "text"
 								},
 								{
 									"key": "course",
-									"value": "",
+									"value": "Taller",
 									"type": "text"
 								}
 							]
@@ -142,6 +142,101 @@
 								"post",
 								"posts",
 								"68255f777f340bc763c9793e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post by Course",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "course",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:2007/v1/post/posts/68255f777f340bc763c9793e",
+							"host": [
+								"localhost"
+							],
+							"port": "2007",
+							"path": [
+								"v1",
+								"post",
+								"posts",
+								"68255f777f340bc763c9793e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post by Date",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "course",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:2007/v1/post/posts/createdAt/2025-05-18T22:16:17.419Z",
+							"host": [
+								"localhost"
+							],
+							"port": "2007",
+							"path": [
+								"v1",
+								"post",
+								"posts",
+								"createdAt",
+								"2025-05-18T22:16:17.419Z"
 							]
 						}
 					},
@@ -373,7 +468,54 @@
 					"response": []
 				},
 				{
-					"name": "Comment",
+					"name": "Comment by post ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "postId",
+									"value": "68255f777f340bc763c9793d",
+									"type": "text"
+								},
+								{
+									"key": "userName",
+									"value": "Chepe",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "AA",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:2007/v1/comment/comments/68256c460e36c6041c614acc",
+							"host": [
+								"localhost"
+							],
+							"port": "2007",
+							"path": [
+								"v1",
+								"comment",
+								"comments",
+								"68256c460e36c6041c614acc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Comment By id",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
