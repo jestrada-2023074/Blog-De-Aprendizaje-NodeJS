@@ -2,15 +2,26 @@ import {
     param,
     body
 } from 'express-validator';
+<<<<<<< Updated upstream
 import { 
+=======
+import {
+>>>>>>> Stashed changes
         validateErrorsWithoutFiles
     } from '../middlewares/validate.error.js';
 import {
     RequiredField,
     postExists,
+<<<<<<< Updated upstream
     commentExists
 } from '../utils/db.validators.js'
 
+=======
+    commentExists,
+    courseExists,
+} from '../utils/db.validators.js'
+ 
+>>>>>>> Stashed changes
 export const registervalidatePost = [
         body('title')
             .exists()
@@ -45,7 +56,11 @@ export const updatevalidatePost = [
             .withMessage('El título debe tener entre 5 y 100 caracteres')
             .trim(),
         body('description')
+<<<<<<< Updated upstream
             .optional() 
+=======
+            .optional()
+>>>>>>> Stashed changes
             .custom(RequiredField)
             .withMessage('la descripción no puede estar vacía')
             .trim(),
@@ -77,7 +92,11 @@ export const registerValidateComment = [
         .isLength({ min: 3, max: 50 })
         .withMessage('El nombre de usuario debe tener entre 3 y 50 caracteres')
         .trim(),
+<<<<<<< Updated upstream
     body('content') 
+=======
+    body('content')
+>>>>>>> Stashed changes
         .exists()
         .withMessage('El contenido del comentario es requerido')
         .custom(RequiredField)
@@ -110,7 +129,11 @@ export const updateValidateComment = [
         .trim(),
     validateErrorsWithoutFiles
 ]
+<<<<<<< Updated upstream
 export const getPostByID = [
+=======
+export const getValidatePostByID = [
+>>>>>>> Stashed changes
     param('id')
         .notEmpty()
         .withMessage('El id del post es requerido')
@@ -128,4 +151,25 @@ export const getCommentByID = [
         .custom(commentExists),
     validateErrorsWithoutFiles
 ]
+<<<<<<< Updated upstream
 
+=======
+export const getValidatePostCourse = [
+    param('course')
+        .notEmpty()
+        .withMessage('El curso es requerido')
+        .custom(courseExists)
+        .withMessage('El curso no es válido'),
+    validateErrorsWithoutFiles
+]
+ 
+export const getValidatePostCreat = [
+    param('createdAt')
+        .notEmpty()
+        .withMessage('La fecha es requerido')
+        .isISO8601()  
+        .withMessage('La fecha no es válida'),
+    validateErrorsWithoutFiles
+]
+ 
+>>>>>>> Stashed changes
